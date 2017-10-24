@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>  
+RewriteEngine On   
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteRule index.html$ index.php
+RewriteRule ^webApp/([a-z]{2,3})-(.*)$ web/index.php/$1-$2 [L]
+RewriteRule ^resourcesFile/(.*)$ resources/$1 [NC]
+RewriteRule ^client/([a-z]{2,3})-(.*)$ web/index.php/$1-$2 [L]
+</IfModule>
